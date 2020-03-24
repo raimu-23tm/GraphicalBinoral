@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <ImageButton
+        android:id="@+id/playButton"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="20dp"
+        android:background="#00ffffff"
+        android:onClick="onClickPlayButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView"
+        app:srcCompat="@drawable/ic_play_circle_outline_black_24dp" />
+
+    <TextView
+        android:id="@+id/HzText1"
+        android:layout_width="120dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="8dp"
+        android:gravity="right"
+        android:text="0 Hz"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView" />
+
+    <TextView
+        android:id="@+id/plusText"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:gravity="right"
+        android:text="＋"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/HzText1"
+        app:layout_constraintTop_toTopOf="@+id/HzText1"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/binoralText"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="right"
+        android:text="0 Hz"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/HzText1"
+        tools:visibility="invisible" />
+
+    <FrameLayout
+        android:layout_width="357dp"
+        android:layout_height="276dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HzText1">
+
+        <ScrollView
+            android:id="@+id/tabview4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            tools:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/sample1"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClickSample1Button"
+                    android:text="睡眠"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/sample3"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClickSample3Button"
+                    android:text="瞑想"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sample1" />
+
+                <Button
+                    android:id="@+id/sample5"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClickSample5Button"
+                    android:text="集中"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sample3" />
+
+                <Button
+                    android:id="@+id/sample7"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClickSample7Button"
+                    android:text="宇宙電波"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sample5" />
+
+                <Button
+                    android:id="@+id/sample2"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="onClickSample2Button"
+                    android:text="リラックス"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sample1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/sample4"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="onClickSample4Button"
+                    android:text="創造"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sample1"
+                    app:layout_constraintTop_toBottomOf="@+id/sample2" />
+
+                <Button
+                    android:id="@+id/sample6"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="onClickSample6Button"
+                    android:text="加速"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sample1"
+                    app:layout_constraintTop_toBottomOf="@+id/sample4" />
+
+                <Button
+                    android:id="@+id/sample8"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:onClick="onClickSample8Button"
+                    android:text="シェーマン波"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sample1"
+                    app:layout_constraintTop_toBottomOf="@+id/sample6" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/tabview3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            tools:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:id="@+id/wavetypeRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/type1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:checked="true"
+                        android:text="サイン波" />
+
+                    <RadioButton
+                        android:id="@+id/type2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="三角波" />
+
+                    <RadioButton
+                        android:id="@+id/type3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="短形波" />
+
+                    <RadioButton
+                        android:id="@+id/type4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="ノコギリ波" />
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/tabview2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/binoral_minus"
+                    android:layout_width="34dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#00ffffff"
+                    android:onClick="onClickMinus2Button"
+                    app:layout_constraintStart_toEndOf="@+id/binoral_minus_mini"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_remove_circle_outline_black_24dp" />
+
+                <Button
+                    android:id="@+id/binoral_minus_mini"
+                    android:layout_width="20dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#00ffffff"
+                    android:onClick="onClickMinus2miniButton"
+                    android:text="〈"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/seekBar2"
+                    android:layout_width="0dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:max="360"
+                    android:progress="0"
+                    app:layout_constraintEnd_toStartOf="@+id/binoral_plus"
+                    app:layout_constraintStart_toEndOf="@+id/binoral_minus"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/binoral_plus"
+                    android:layout_width="34dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="#00ffffff"
+                    android:onClick="onClickPlus2Button"
+                    app:layout_constraintEnd_toStartOf="@+id/binoral_plus_mini"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
+
+                <Button
+                    android:id="@+id/binoral_plus_mini"
+                    android:layout_width="20dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#00ffffff"
+                    android:onClick="onClickPlus2miniButton"
+                    android:text="〉"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button17"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="sans-serif"
+                    android:onClick="onClickBinoral2Button"
+                    android:text="θ波（4 ～ 7 Hz）"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+
+                <Button
+                    android:id="@+id/button18"
+                    android:layout_width="153dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="sans-serif"
+                    android:onClick="onClickBinoral4Button"
+                    android:text="β波（14 ～ 33 Hz）"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button17" />
+
+                <Button
+                    android:id="@+id/button16"
+                    android:layout_width="160dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="sans-serif"
+                    android:onClick="onClickBinoral1Button"
+                    android:text="δ波（0.5 ～ 3 Hz）"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toStartOf="@+id/button17"
+                    app:layout_constraintHorizontal_bias="0.461"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+
+                <Button
+                    android:id="@+id/button19"
+                    android:layout_width="160dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="sans-serif"
+                    android:onClick="onClickBinoral3Button"
+                    android:text="α波（8 ～ 13 Hz）"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toStartOf="@+id/button17"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button16" />
+
+                <CheckBox
+                    android:id="@+id/powerModeCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Power Mode"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button19" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/tabview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="visible">
+
+                <SeekBar
+                    android:id="@+id/seekBar1_1"
+                    android:layout_width="0dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:max="4000"
+                    android:progress="0"
+                    app:layout_constraintEnd_toStartOf="@+id/button3"
+                    app:layout_constraintStart_toEndOf="@+id/button2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/frequencyButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:onClick="onClickSolfeggio3Button"
+                    android:text="促進"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBar1_2" />
+
+                <ImageButton
+                    android:id="@+id/button3"
+                    android:layout_width="41dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="#00ffffff"
+                    android:onClick="onClickPlusButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/button2"
+                    android:layout_width="42dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#00ffffff"
+                    android:onClick="onClickMinusButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_remove_circle_outline_black_24dp" />
+
+                <Button
+                    android:id="@+id/frequencyButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="50dp"
+                    android:fontFamily="@font/yellowtail"
+                    android:onClick="onClickSolfeggio5Button"
+                    android:text="変化"
+                    app:layout_constraintEnd_toStartOf="@+id/frequencyButton6"
+                    app:layout_constraintStart_toEndOf="@+id/frequencyButton4"
+                    app:layout_constraintTop_toBottomOf="@+id/frequencyButton2" />
+
+                <Button
+                    android:id="@+id/frequencyButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClickSolfeggio4Button"
+                    android:text="解放"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frequencyButton1" />
+
+                <SeekBar
+                    android:id="@+id/seekBar1_2"
+                    android:layout_width="0dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:max="200"
+                    android:progress="0"
+                    app:layout_constraintEnd_toStartOf="@+id/button3"
+                    app:layout_constraintStart_toEndOf="@+id/button2"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBar1_1" />
+
+                <Button
+                    android:id="@+id/frequencyButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:onClick="onClickSolfeggio6Button"
+                    android:text="調和"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frequencyButton3" />
+
+                <Button
+                    android:id="@+id/frequencyButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:onClick="onClickSolfeggio9Button"
+                    android:text="水晶浄化"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frequencyButton6" />
+
+                <Button
+                    android:id="@+id/frequencyButton2"
+                    android:layout_width="95dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="50dp"
+                    android:onClick="onClickSolfeggio2Button"
+                    android:text="安定"
+                    app:layout_constraintEnd_toStartOf="@+id/frequencyButton3"
+                    app:layout_constraintStart_toEndOf="@+id/frequencyButton1"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBar1_2" />
+
+                <Button
+                    android:id="@+id/frequencyButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClickSolfeggio7Button"
+                    android:text="自由"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frequencyButton4" />
+
+                <Button
+                    android:id="@+id/frequencyButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif"
+                    android:onClick="onClickSolfeggio1Button"
+                    android:text="奇跡"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBar1_2" />
+
+                <Button
+                    android:id="@+id/frequencyButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="50dp"
+                    android:onClick="onClickSolfeggio8Button"
+                    android:text="直感"
+                    app:layout_constraintEnd_toStartOf="@+id/frequencyButton9"
+                    app:layout_constraintStart_toEndOf="@+id/frequencyButton7"
+                    app:layout_constraintTop_toBottomOf="@+id/frequencyButton5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="0dp"
+        android:layout_height="151dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabHost" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

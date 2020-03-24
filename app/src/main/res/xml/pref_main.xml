@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="設定">
+        <SeekBarPreferenceCompat
+            android:key="seekBar"
+            android:title="音量"
+            android:summary="　"
+            android:defaultValue="true" />
+        <SwitchPreferenceCompat
+            android:key="switch"
+            android:title="バックグラウンドで実行"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="このアプリについて">
+        <Preference
+            android:icon="@drawable/ic_grade_black_24dp"
+            android:key="pref_rate"
+            android:title="このアプリを評価する" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

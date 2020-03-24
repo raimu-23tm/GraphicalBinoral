@@ -1,0 +1,14 @@
+attribute vec2 A_position;
+varying vec2 V_position;
+attribute float A_canvasrate;
+varying float V_canvasrate;
+attribute float A_time;
+varying float V_time;
+
+void main(void)
+{
+    gl_Position = vec4(A_position, 0.0, 1.0);
+    V_position = A_position;
+    V_canvasrate = A_canvasrate;
+    V_time = A_time;
+}
